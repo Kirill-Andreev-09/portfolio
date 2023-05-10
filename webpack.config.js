@@ -3,7 +3,8 @@ const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack"); // для работы с env
 
 module.exports = {
-  mode: "production", // или 'production' "development"
+  // при deploy использовать 'production'
+  mode: "production", // "production" / "development"
   entry: "./src/index.tsx",
   devtool: "source-map",
   output: {
