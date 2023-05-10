@@ -9,11 +9,6 @@ export const MainRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
-        {/* <Route
-          path={`${ROUTES.currentNews.path}/:id`}
-          element={<CurrentNews />}
-        /> */}
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

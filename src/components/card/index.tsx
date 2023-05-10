@@ -30,8 +30,6 @@ const CustomCard = ({
 }: Props) => {
   const { classes } = useStyles();
 
-  console.log("id", id);
-
   return (
     <DefaultCard className={classes.card} shadow="sm" padding="lg" radius="md">
       <Box>

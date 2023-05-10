@@ -8,7 +8,6 @@ export const useDeleteProject = (db: Firestore, collectionKey: string) => {
     async (id: string) => {
       try {
         await deleteDoc(doc(db, collectionKey, id));
-        console.log(`Project with ID ${id} deleted successfully`);
       } catch (error) {
         console.error(`Error deleting project: ${error}`);
       }

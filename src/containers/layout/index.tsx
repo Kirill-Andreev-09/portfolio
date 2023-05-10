@@ -20,14 +20,14 @@ const currentTitle: ICurrentTitle = {
 interface ILayoutProps {
   children: ReactNode;
   prevPage?: string;
-  headerRightIcon?: ReactNode;
+  headerRightSection?: ReactNode;
   hideFooter?: boolean;
 }
 
 export const Layout: FC<ILayoutProps> = ({
   children,
   prevPage,
-  headerRightIcon,
+  headerRightSection,
   hideFooter,
 }) => {
   const location = useLocation();
@@ -49,7 +49,7 @@ export const Layout: FC<ILayoutProps> = ({
         title={getTitlePage(location.pathname)}
         prevPage={prevPage}
         iconLeft={<ArrowLeftIcon fill="white" />}
-        iconRight={headerRightIcon}
+        iconRight={headerRightSection}
       />
       {children}
       {!hideFooter && <Footer />}

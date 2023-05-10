@@ -3,7 +3,7 @@ import { collection, addDoc, setDoc } from "firebase/firestore";
 import {
   Box,
   Button,
-  LoadingOverlay,
+  Text,
   MultiSelect,
   SimpleGrid,
   TextInput,
@@ -45,7 +45,6 @@ export const AddProjectForm = () => {
       await setDoc(newProjectDocRef, values);
 
       form.reset();
-      console.log("Project added successfully");
     } catch (error: any) {
       if (error.message && error.message.includes("Missing required fields")) {
         console.error(error.message);
@@ -64,7 +63,7 @@ export const AddProjectForm = () => {
   return (
     <Box>
       <form className={classes.form} onSubmit={form.onSubmit(handleSubmit)}>
-        <Title order={3} mb={24}>
+        <Title order={3} mb={24} color="white">
           Добавление нового проекта
         </Title>
         <SimpleGrid
@@ -77,29 +76,28 @@ export const AddProjectForm = () => {
           ]}
         >
           <TextInput
-            width="100%"
-            label="Название"
+            label={<Text color="white">Название</Text>}
             placeholder="Название"
             disabled={isLoading}
             {...form.getInputProps("title")}
           />
 
           <TextInput
-            label="Описание"
+            label={<Text color="white">Описание</Text>}
             placeholder="Описание"
             disabled={isLoading}
             {...form.getInputProps("description")}
           />
 
           <TextInput
-            label="Ссылка на Github Repo"
+            label={<Text color="white">Ссылка на Github Repo</Text>}
             placeholder="Ссылка на Github Repo"
             disabled={isLoading}
             {...form.getInputProps("githubRepoUrl")}
           />
 
           <TextInput
-            label="Ссылка на Github Pages"
+            label={<Text color="white">Ссылка на Github Pages</Text>}
             placeholder="Ссылка на Github Pages"
             disabled={isLoading}
             {...form.getInputProps("githubPagesUrl")}
@@ -111,8 +109,8 @@ export const AddProjectForm = () => {
             }}
             searchable
             id="technologies-select"
-            label="Используемые технологии"
-            placeholder="Select technologies"
+            label={<Text color="white">Используемые технологии</Text>}
+            placeholder="Выберите технологии"
             data={technologiesData.map((tech) => ({
               value: tech,
               label: tech,

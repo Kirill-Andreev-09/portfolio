@@ -18,7 +18,6 @@ export const useFirebaseCollection = (db: Firestore, collectionKey: string) => {
 
         setData(data);
         setLoading(false);
-        console.log("data", data);
       },
       (error) => {
         console.error(error);
